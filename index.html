@@ -3,143 +3,173 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Sections</title>
-
+<title>VET Student Loans - Hammond Institute</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+
+:root{
+  --primary:#1e3a6d;
+  --accent:#e6671e;
+  --light:#f4f6f9;
+  --dark:#10264b;
+  --text:#5f6f82;
+  --white:#ffffff;
+  --spacing-xs:8px;
+  --spacing-sm:16px;
+  --spacing-md:24px;
+  --spacing-lg:40px;
+  --spacing-xl:60px;
+  --spacing-2xl:100px;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  background:#f4f6f9;
+  background:var(--light);
+  color:var(--text);
+  line-height:1.6;
 }
 
-/* =========================
-   STATS SECTION
-========================= */
+
+/*--- CONTAINER ---*/
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 var(--spacing-md);
+}
+
+/*--- STATS SECTION ---*/
 .stats{
-  background:#e6671e;
-  padding:40px 20px;
+  background:var(--accent);
+  padding:var(--spacing-xl) var(--spacing-md);
 }
 
 .stats .container{
-  max-width:1200px;
-  margin:auto;
   display:flex;
   justify-content:space-between;
   align-items:center;
   text-align:center;
   flex-wrap:wrap;
+  gap:var(--spacing-lg);
 }
 
 .stat-box{
   flex:1;
-  padding:20px;
-  min-width:150px;
+  min-width:120px;
 }
 
 .stat-box h2{
-  font-size:38px;
-  color:#fff;
-  font-weight:bold;
+  font-size:clamp(28px,6vw,48px);
+  color:var(--white);
+  font-weight:700;
 }
 
 .stat-box p{
-  margin-top:8px;
-  color:#fff;
-  font-size:16px;
+  margin-top:var(--spacing-xs);
+  color:rgba(255,255,255,0.9);
+  font-size:14px;
+  font-weight:500;
 }
 
 .divider{
   width:1px;
   height:60px;
-  background:rgba(255,255,255,0.5);
+  background:rgba(255,255,255,0.3);
 }
 
-/* =========================
-   HOW IT WORKS
-========================= */
-
+/*--- SECTION DEFAULTS ---*/
 .section{
-  padding:80px 20px;
+  padding:var(--spacing-2xl) var(--spacing-md);
+}
+
+.section .container{
   max-width:1200px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .small-title{
-  color:#e6671e;
+  color:var(--accent);
   font-weight:600;
   letter-spacing:2px;
-  font-size:14px;
-  margin-bottom:20px;
+  font-size:12px;
+  text-transform:uppercase;
+  margin-bottom:var(--spacing-md);
 }
 
 .main-title{
-  font-size:42px;
-  font-weight:800;
-  color:#1e3a6d;
-  margin-bottom:20px;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:var(--spacing-md);
+  line-height:1.2;
 }
 
 .description{
-  color:#5f6f82;
+  color:var(--text);
   max-width:600px;
-  line-height:1.6;
-  margin-bottom:50px;
+  margin-bottom:var(--spacing-xl);
+  font-size:16px;
 }
 
+
+/*--- HOW IT WORKS SECTION ---*/
 .steps{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:var(--spacing-lg);
+  margin-top:var(--spacing-xl);
 }
 
 .card{
-  background:#fff;
+  background:var(--white);
   border:1px solid #e0e6ed;
-  border-radius:20px;
-  padding:35px 25px;
-  flex:1;
-  min-width:250px;
+  border-radius:16px;
+  padding:var(--spacing-lg);
   position:relative;
-  transition:0.3s ease;
+  transition:all 0.3s ease;
 }
 
 .card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.08);
 }
 
 .number{
-  width:55px;
-  height:55px;
-  background:#1e3a6d;
-  color:#fff;
-  font-size:20px;
-  font-weight:bold;
+  width:50px;
+  height:50px;
+  background:var(--primary);
+  color:var(--white);
+  font-size:24px;
+  font-weight:700;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-bottom:20px;
+  margin-bottom:var(--spacing-md);
 }
 
 .arrow{
   position:absolute;
-  top:40px;
-  right:-15px;
-  background:#e6671e;
-  color:#fff;
-  width:35px;
-  height:35px;
+  top:var(--spacing-lg);
+  right:-18px;
+  background:var(--accent);
+  color:var(--white);
+  width:36px;
+  height:36px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:18px;
+  font-size:20px;
+  font-weight:700;
 }
 
 .card:last-child .arrow{
@@ -148,42 +178,41 @@ body{
 
 .card h3{
   font-size:20px;
-  color:#1e3a6d;
-  margin-bottom:15px;
+  color:var(--primary);
+  margin-bottom:var(--spacing-md);
+  font-weight:600;
 }
 
 .card p{
-  color:#5f6f82;
-  line-height:1.6;
+  color:var(--text);
   font-size:15px;
 }
 
-/* =========================
-   VET STUDENT LOANS SECTION
-========================= */
-
+/*--- VET STUDENT LOANS SECTION ---*/
 .vet-section{
-  padding:80px 20px;
+  padding:var(--spacing-2xl) var(--spacing-md);
+}
+
+.vet-section .container{
   max-width:1200px;
-  margin:auto;
-  display:flex;
-  gap:50px;
-  flex-wrap:wrap;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:var(--spacing-xl);
+  align-items:center;
 }
 
 .vet-left{
-  background:#1e3a6d;
-  color:#fff;
-  padding:50px 40px;
-  border-radius:30px;
-  flex:1;
-  min-width:320px;
-  position:relative;
+  background:var(--primary);
+  color:var(--white);
+  padding:var(--spacing-xl);
+  border-radius:16px;
 }
 
 .vet-left h2{
-  font-size:32px;
-  margin-bottom:30px;
+  font-size:clamp(24px,4vw,36px);
+  margin-bottom:var(--spacing-xl);
+  line-height:1.2;
 }
 
 .vet-left ul{
@@ -191,14 +220,15 @@ body{
 }
 
 .vet-left li{
-  margin-bottom:20px;
+  margin-bottom:var(--spacing-lg);
   display:flex;
-  gap:15px;
+  gap:var(--spacing-md);
   line-height:1.6;
+  font-size:15px;
 }
 
 .check{
-  background:#e6671e;
+  background:var(--accent);
   width:28px;
   height:28px;
   border-radius:50%;
@@ -207,43 +237,45 @@ body{
   justify-content:center;
   font-size:14px;
   flex-shrink:0;
+  font-weight:700;
 }
 
-.vet-right{
-  flex:1;
-  min-width:320px;
+.vet-right h2{
+  font-size:clamp(24px,4vw,40px);
+  color:var(--primary);
+  margin-bottom:var(--spacing-md);
+  line-height:1.2;
 }
 
 .vet-small{
   letter-spacing:2px;
-  color:#5f6f82;
-  font-size:14px;
-  margin-bottom:15px;
-}
-
-.vet-right h2{
-  font-size:40px;
-  color:#1e3a6d;
-  margin-bottom:20px;
+  color:var(--text);
+  font-size:12px;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:var(--spacing-md);
 }
 
 .vet-right p{
-  color:#5f6f82;
+  color:var(--text);
   line-height:1.7;
-  margin-bottom:20px;
+  margin-bottom:var(--spacing-md);
+  font-size:15px;
 }
 
 .eligibility{
-  background:#fff;
-  padding:30px;
-  border-left:5px solid #e6671e;
-  border-radius:10px;
-  margin-top:30px;
+  background:var(--light);
+  padding:var(--spacing-lg);
+  border-left:4px solid var(--accent);
+  border-radius:8px;
+  margin-top:var(--spacing-lg);
 }
 
 .eligibility h3{
-  color:#1e3a6d;
-  margin-bottom:15px;
+  color:var(--primary);
+  margin-bottom:var(--spacing-md);
+  font-size:16px;
+  font-weight:600;
 }
 
 .eligibility ul{
@@ -251,335 +283,291 @@ body{
 }
 
 .eligibility li{
-  margin-bottom:12px;
-  color:#5f6f82;
+  margin-bottom:var(--spacing-sm);
+  color:var(--text);
+  font-size:14px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-@media (max-width:992px){
-  .main-title,
-  .vet-right h2{
-    font-size:30px;
-  }
-  .divider{
-    display:none;
-  }
-}
-
-@media (max-width:768px){
-  .stats .container{
-    flex-direction:column;
-  }
-  .steps{
-    flex-direction:column;
-  }
-  .arrow{
-    display:none;
-  }
-  .vet-section{
-    flex-direction:column;
-  }
-}
-
-/* =========================
-   ELIGIBLE COURSES
-========================= */
-
+/*--- ELIGIBLE COURSES SECTION ---*/
 .courses{
-  padding:80px 20px;
+  padding:var(--spacing-2xl) var(--spacing-md);
+}
+
+.courses .container{
   max-width:1200px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .course-grid{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:var(--spacing-lg);
+  margin-top:var(--spacing-xl);
 }
 
 .course-card{
-  background:#fff;
-  border-radius:20px;
+  background:var(--white);
+  border-radius:16px;
   overflow:hidden;
   border:1px solid #e0e6ed;
-  flex:1;
-  min-width:280px;
-  transition:0.3s;
+  transition:all 0.3s ease;
+  display:flex;
+  flex-direction:column;
 }
 
 .course-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  transform:translateY(-6px);
+  box-shadow:0 12px 24px rgba(0,0,0,0.08);
 }
 
 .course-header{
-  background:#1e3a6d;
-  color:#fff;
-  padding:30px;
+  background:var(--primary);
+  color:var(--white);
+  padding:var(--spacing-lg);
 }
 
 .course-code{
-  color:#ff8c3a;
-  font-size:14px;
+  color:var(--accent);
+  font-size:12px;
   letter-spacing:1px;
-  margin-bottom:10px;
+  text-transform:uppercase;
+  margin-bottom:var(--spacing-sm);
+  font-weight:600;
 }
 
 .course-header h3{
-  font-size:20px;
+  font-size:18px;
+  font-weight:600;
+  line-height:1.4;
 }
 
 .course-body{
-  padding:30px;
+  padding:var(--spacing-lg);
+  flex-grow:1;
+  display:flex;
+  flex-direction:column;
 }
 
 .course-body p{
-  color:#5f6f82;
-  margin-bottom:20px;
+  color:var(--text);
+  margin-bottom:var(--spacing-md);
   line-height:1.6;
+  font-size:14px;
 }
 
 .course-meta{
-  font-size:14px;
-  color:#5f6f82;
-  margin-bottom:25px;
+  font-size:13px;
+  color:var(--text);
+  margin-bottom:var(--spacing-lg);
+  margin-top:auto;
 }
 
 .btn{
   display:inline-block;
   padding:12px 20px;
-  border:2px solid #e6671e;
+  border:2px solid var(--accent);
   border-radius:8px;
-  color:#e6671e;
+  color:var(--accent);
   font-weight:600;
   text-decoration:none;
-  transition:0.3s;
+  transition:all 0.3s ease;
+  font-size:14px;
+  text-align:center;
+  width:fit-content;
 }
 
 .btn:hover{
-  background:#e6671e;
-  color:#fff;
+  background:var(--accent);
+  color:var(--white);
+  transform:translateY(-2px);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
 
-@media (max-width:992px){
-  .main-title,
-  .vet-right h2{
-    font-size:30px;
-  }
-  .divider{
-    display:none;
-  }
-}
-
-@media (max-width:768px){
-  .stats .container,
-  .steps,
-  .vet-section,
-  .course-grid{
-    flex-direction:column;
-  }
-  .arrow{
-    display:none;
-  }
-}
-
-/* =========================
-   WHY CHOOSE SECTION
-========================= */
-
+/*--- WHY CHOOSE SECTION ---*/
 .why-section{
-  background:#10264b;
-  padding:100px 20px;
+  background:var(--dark);
+  padding:var(--spacing-2xl) var(--spacing-md);
 }
 
 .why-container{
   max-width:1200px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .why-small{
-  color:#ff8c3a;
+  color:var(--accent);
   letter-spacing:2px;
-  font-size:14px;
-  margin-bottom:20px;
+  font-size:12px;
+  text-transform:uppercase;
+  margin-bottom:var(--spacing-md);
+  font-weight:600;
 }
 
 .why-title{
-  color:#fff;
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:25px;
+  color:var(--white);
+  font-size:clamp(28px,5vw,48px);
+  font-weight:700;
+  margin-bottom:var(--spacing-md);
+  line-height:1.2;
 }
 
 .why-desc{
   color:#cbd5e1;
   max-width:700px;
-  margin-bottom:60px;
+  margin-bottom:var(--spacing-xl);
   line-height:1.7;
+  font-size:16px;
 }
 
 .why-grid{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:var(--spacing-lg);
 }
 
 .why-card{
   background:#1c355f;
-  padding:40px 30px;
-  border-radius:20px;
-  flex:1;
-  min-width:250px;
+  padding:var(--spacing-xl);
+  border-radius:16px;
   text-align:center;
-  transition:0.3s;
+  transition:all 0.3s ease;
   border:1px solid rgba(255,255,255,0.08);
 }
 
 .why-card:hover{
   transform:translateY(-6px);
   box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  border-color:rgba(255,255,255,0.15);
 }
 
 .why-icon{
-  background:#e6671e;
+  background:var(--accent);
   width:70px;
   height:70px;
-  border-radius:20px;
+  border-radius:16px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
-  margin:0 auto 25px;
+  font-size:32px;
+  margin:0 auto var(--spacing-lg);
 }
 
 .why-card h3{
-  color:#fff;
-  font-size:20px;
-  margin-bottom:15px;
+  color:var(--white);
+  font-size:18px;
+  margin-bottom:var(--spacing-md);
+  font-weight:600;
 }
 
 .why-card p{
   color:#cbd5e1;
-  font-size:15px;
+  font-size:14px;
   line-height:1.6;
 }
 
-/* Responsive */
-@media (max-width:768px){
-  .why-title{
-    font-size:32px;
-  }
-  .why-grid{
-    flex-direction:column;
-  }
-}
-
-/* =========================
-   STUDENT STORIES
-========================= */
-
+/*--- STUDENT STORIES SECTION ---*/
 .stories-section{
-  background:#f4f6f9;
-  padding:100px 20px;
+  background:var(--light);
+  padding:var(--spacing-2xl) var(--spacing-md);
 }
 
 .stories-container{
   max-width:1200px;
-  margin:auto;
+  margin:0 auto;
 }
 
 .stories-small{
-  color:#e6671e;
+  color:var(--accent);
   letter-spacing:2px;
-  font-size:14px;
-  margin-bottom:20px;
+  font-size:12px;
+  text-transform:uppercase;
+  margin-bottom:var(--spacing-md);
+  font-weight:600;
 }
 
 .stories-title{
-  font-size:44px;
-  font-weight:800;
-  color:#1e3a6d;
-  margin-bottom:25px;
+  font-size:clamp(28px,5vw,48px);
+  font-weight:700;
+  color:var(--primary);
+  margin-bottom:var(--spacing-md);
+  line-height:1.2;
 }
 
 .stories-desc{
   max-width:650px;
-  color:#5f6f82;
-  margin-bottom:60px;
+  color:var(--text);
+  margin-bottom:var(--spacing-xl);
+  font-size:16px;
 }
 
 .stories-grid{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:var(--spacing-lg);
 }
 
 .story-card{
-  background:#ffffff;
-  padding:40px 30px;
-  border-radius:20px;
-  flex:1;
-  min-width:280px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.05);
-  transition:0.3s;
+  background:var(--white);
+  padding:var(--spacing-xl);
+  border-radius:16px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+  transition:all 0.3s ease;
 }
 
 .story-card:hover{
   transform:translateY(-6px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+  box-shadow:0 12px 24px rgba(0,0,0,0.08);
 }
 
 .quote{
-  font-size:40px;
-  color:#e6671e;
-  margin-bottom:15px;
+  font-size:36px;
+  color:var(--accent);
+  margin-bottom:var(--spacing-md);
 }
 
 .stars{
   color:#fbbf24;
-  margin-bottom:20px;
-  font-size:18px;
+  margin-bottom:var(--spacing-md);
+  font-size:16px;
 }
 
 .story-text{
-  color:#5f6f82;
-  margin-bottom:30px;
+  color:var(--text);
+  margin-bottom:var(--spacing-lg);
   line-height:1.7;
+  font-size:14px;
 }
 
 .story-user{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:var(--spacing-md);
 }
 
 .avatar{
   width:50px;
   height:50px;
   border-radius:50%;
-  background:#1e3a6d;
-  color:#fff;
+  background:var(--primary);
+  color:var(--white);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight:bold;
+  font-weight:700;
+  flex-shrink:0;
 }
 
 .story-user h4{
-  color:#1e3a6d;
-  margin-bottom:3px;
+  color:var(--primary);
+  margin-bottom:2px;
+  font-size:15px;
+  font-weight:600;
 }
 
 .story-user span{
-  color:#5f6f82;
-  font-size:14px;
+  color:var(--text);
+  font-size:13px;
 }
 
 /* Responsive */
@@ -592,81 +580,158 @@ body{
   }
 }
 
-/* =========================
-   CTA SECTION
-========================= */
 
+/*--- CALL TO ACTION SECTION ---*/
 .cta-section{
-  background:#e6671e;
-  padding:100px 20px;
+  background:var(--accent);
+  padding:var(--spacing-2xl) var(--spacing-md);
   text-align:center;
-  position:relative;
 }
 
 .cta-container{
-  max-width:1000px;
-  margin:auto;
+  max-width:900px;
+  margin:0 auto;
 }
 
 .cta-title{
-  color:#ffffff;
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:20px;
+  color:var(--white);
+  font-size:clamp(28px,5vw,48px);
+  font-weight:700;
+  margin-bottom:var(--spacing-md);
+  line-height:1.2;
 }
 
 .cta-desc{
   color:#ffe8d6;
-  font-size:18px;
-  margin-bottom:40px;
+  font-size:16px;
+  margin-bottom:var(--spacing-xl);
   line-height:1.7;
 }
 
 .cta-buttons{
   display:flex;
   justify-content:center;
-  gap:25px;
+  gap:var(--spacing-md);
   flex-wrap:wrap;
 }
 
 .btn-primary{
-  background:#ffffff;
-  color:#e6671e;
-  padding:15px 30px;
-  border-radius:12px;
+  background:var(--white);
+  color:var(--accent);
+  padding:14px 28px;
+  border-radius:8px;
   font-weight:600;
   text-decoration:none;
-  transition:0.3s;
+  transition:all 0.3s ease;
+  font-size:14px;
+  border:2px solid var(--white);
+  display:inline-block;
 }
 
 .btn-primary:hover{
-  background:#f4f4f4;
-  transform:translateY(-3px);
+  background:transparent;
+  color:var(--white);
+  transform:translateY(-2px);
 }
 
 .btn-secondary{
-  border:2px solid #ffffff;
-  color:#ffffff;
-  padding:15px 30px;
-  border-radius:12px;
+  border:2px solid var(--white);
+  color:var(--white);
+  padding:14px 28px;
+  border-radius:8px;
   font-weight:600;
   text-decoration:none;
-  transition:0.3s;
+  transition:all 0.3s ease;
+  font-size:14px;
+  display:inline-block;
 }
 
 .btn-secondary:hover{
-  background:#ffffff;
-  color:#e6671e;
-  transform:translateY(-3px);
+  background:var(--white);
+  color:var(--accent);
+  transform:translateY(-2px);
 }
 
-/* Responsive */
+/*--- RESPONSIVE DESIGN ---*/
+@media (max-width:992px){
+  .vet-section .container{
+    grid-template-columns:1fr;
+  }
+  
+  .arrow{
+    display:none !important;
+  }
+  
+  .divider{
+    display:none;
+  }
+  
+  .section{
+    padding:var(--spacing-xl) var(--spacing-md);
+  }
+}
+
 @media (max-width:768px){
-  .cta-title{
+  :root{
+    --spacing-2xl:60px;
+    --spacing-xl:40px;
+  }
+  
+  .stats .container{
+    flex-direction:column;
+    gap:var(--spacing-md);
+  }
+  
+  .stat-box h2{
     font-size:32px;
   }
-  .cta-desc{
-    font-size:16px;
+  
+  .steps{
+    grid-template-columns:1fr;
+  }
+  
+  .card{
+    position:relative;
+  }
+  
+  .why-grid,
+  .stories-grid,
+  .course-grid{
+    grid-template-columns:1fr;
+  }
+  
+  .cta-buttons{
+    flex-direction:column;
+  }
+  
+  .btn-primary,
+  .btn-secondary{
+    width:100%;
+  }
+}
+
+@media (max-width:480px){
+  :root{
+    --spacing-xl:32px;
+    --spacing-lg:24px;
+    --spacing-md:16px;
+  }
+  
+  .stat-box h2{
+    font-size:24px;
+  }
+  
+  .card,
+  .vet-left,
+  .vet-right,
+  .course-card,
+  .why-card,
+  .story-card{
+    padding:var(--spacing-lg);
+  }
+  
+  .small-title{
+    font-size:11px;
   }
 }
 </style>
@@ -690,6 +755,7 @@ body{
 
 <!-- ================= HOW IT WORKS ================= -->
 <section class="section">
+<div class="container">
 <div class="small-title">HOW IT WORKS</div>
 <h2 class="main-title">4 Simple Steps to Enrol with VET Student Loans</h2>
 <p class="description">
@@ -713,10 +779,12 @@ Getting started is easier than you think. Follow these four steps to begin your 
 <h3>Start Studying!</h3>
 <p>Begin your course online with full support from expert trainers.</p></div>
 </div>
+</div>
 </section>
 
 <!-- ================= VET STUDENT LOANS ================= -->
 <section class="vet-section">
+<div class="container">
 
 <div class="vet-left">
 <h2>What Are VET Student Loans?</h2>
@@ -751,10 +819,13 @@ Access quality training without the stress of upfront costs.
 </div>
 
 </div>
+
+</div>
 </section>
 
 <!-- ELIGIBLE COURSES -->
 <section class="courses">
+<div class="container">
 <div class="small-title">ELIGIBLE COURSES</div>
 <h2 class="main-title">VET Student Loan Eligible Qualifications</h2>
 <p class="description">
@@ -771,7 +842,7 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Gain the skills and knowledge to support people living with disabilities in community and residential settings.</p>
 <div class="course-meta">📅 12–18 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/chc43121-certificate-iv-in-disability-support/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
 
@@ -783,7 +854,7 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Develop expertise to provide mental health services, crisis support, and person-centred care.</p>
 <div class="course-meta">📅 12–18 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/certificate_iv_in_mental_health/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
 
@@ -795,11 +866,9 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Lead and coordinate community services programs and support individuals and families.</p>
 <div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/chc52025-diploma-of-community-services/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
-
-<div class="course-grid">
 
 <div class="course-card">
 <div class="course-header">
@@ -809,7 +878,7 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Build advanced skills to work as an Early Childhood Teacher or Director in early learning centres, kindergartens, and family daycare</p>
 <div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/diploma-of-early-childhood-education-and-care/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
 
@@ -821,7 +890,7 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Advance your career in mental health with specialist skills in complex case management, therapeutic approaches, and team leadership.</p>
 <div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/diploma-of-mental-health/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
 
@@ -833,12 +902,11 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <div class="course-body">
 <p>Step into senior leadership roles in the community sector with advanced management, governance, and strategic planning capabilities.</p>
 <div class="course-meta">📅 24 months | 💻 Online / Blended</div>
-<a href="#" class="btn">Learn More & Enrol</a>
+<a href="https://hammond.edu.au/advanced-diploma-of-community-sector-management/" class="btn">Learn More & Enrol</a>
 </div>
 </div>
 
 </div>
-
 </div>
 
 </section>
@@ -976,22 +1044,24 @@ These nationally recognised courses are eligible for VET Student Loans — study
 <!-- ================= CALL TO ACTION ================= -->
 
 <section class="cta-section">
-  <div class="cta-container">
+  <div class="container">
+    <div class="cta-container">
 
-    <h2 class="cta-title">
-      Ready to Study Now & Pay Later?
-    </h2>
+      <h2 class="cta-title">
+        Ready to Study Now & Pay Later?
+      </h2>
 
-    <p class="cta-desc">
-      Join thousands of Australians who've launched their career with Hammond Institute —
-      with no upfront fees through VET Student Loans.
-    </p>
+      <p class="cta-desc">
+        Join thousands of Australians who've launched their career with Hammond Institute —
+        with no upfront fees through VET Student Loans.
+      </p>
 
-    <div class="cta-buttons">
-      <a href="#" class="btn-primary">🎓 Enrol Now — Free Enquiry</a>
-      <a href="tel:0387648419" class="btn-secondary">📞 Call 03 8764 8419</a>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">🎓 Enrol Now — Free Enquiry</a>
+        <a href="tel:0387648419" class="btn-secondary">📞 Call 03 8764 8419</a>
+      </div>
+
     </div>
-
   </div>
 </section>
 
