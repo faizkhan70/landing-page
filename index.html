@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Sections</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f6f9;
+}
+
+/* =========================
+   STATS SECTION
+========================= */
+.stats{
+  background:#e6671e;
+  padding:40px 20px;
+}
+
+.stats .container{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+  flex-wrap:wrap;
+}
+
+.stat-box{
+  flex:1;
+  padding:20px;
+  min-width:150px;
+}
+
+.stat-box h2{
+  font-size:38px;
+  color:#fff;
+  font-weight:bold;
+}
+
+.stat-box p{
+  margin-top:8px;
+  color:#fff;
+  font-size:16px;
+}
+
+.divider{
+  width:1px;
+  height:60px;
+  background:rgba(255,255,255,0.5);
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.small-title{
+  color:#e6671e;
+  font-weight:600;
+  letter-spacing:2px;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.main-title{
+  font-size:42px;
+  font-weight:800;
+  color:#1e3a6d;
+  margin-bottom:20px;
+}
+
+.description{
+  color:#5f6f82;
+  max-width:600px;
+  line-height:1.6;
+  margin-bottom:50px;
+}
+
+.steps{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #e0e6ed;
+  border-radius:20px;
+  padding:35px 25px;
+  flex:1;
+  min-width:250px;
+  position:relative;
+  transition:0.3s ease;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.number{
+  width:55px;
+  height:55px;
+  background:#1e3a6d;
+  color:#fff;
+  font-size:20px;
+  font-weight:bold;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+}
+
+.arrow{
+  position:absolute;
+  top:40px;
+  right:-15px;
+  background:#e6671e;
+  color:#fff;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.card:last-child .arrow{
+  display:none;
+}
+
+.card h3{
+  font-size:20px;
+  color:#1e3a6d;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#5f6f82;
+  line-height:1.6;
+  font-size:15px;
+}
+
+/* =========================
+   VET STUDENT LOANS SECTION
+========================= */
+
+.vet-section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  gap:50px;
+  flex-wrap:wrap;
+}
+
+.vet-left{
+  background:#1e3a6d;
+  color:#fff;
+  padding:50px 40px;
+  border-radius:30px;
+  flex:1;
+  min-width:320px;
+  position:relative;
+}
+
+.vet-left h2{
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+.vet-left ul{
+  list-style:none;
+}
+
+.vet-left li{
+  margin-bottom:20px;
+  display:flex;
+  gap:15px;
+  line-height:1.6;
+}
+
+.check{
+  background:#e6671e;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  flex-shrink:0;
+}
+
+.vet-right{
+  flex:1;
+  min-width:320px;
+}
+
+.vet-small{
+  letter-spacing:2px;
+  color:#5f6f82;
+  font-size:14px;
+  margin-bottom:15px;
+}
+
+.vet-right h2{
+  font-size:40px;
+  color:#1e3a6d;
+  margin-bottom:20px;
+}
+
+.vet-right p{
+  color:#5f6f82;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.eligibility{
+  background:#fff;
+  padding:30px;
+  border-left:5px solid #e6671e;
+  border-radius:10px;
+  margin-top:30px;
+}
+
+.eligibility h3{
+  color:#1e3a6d;
+  margin-bottom:15px;
+}
+
+.eligibility ul{
+  list-style:none;
+}
+
+.eligibility li{
+  margin-bottom:12px;
+  color:#5f6f82;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:992px){
+  .main-title,
+  .vet-right h2{
+    font-size:30px;
+  }
+  .divider{
+    display:none;
+  }
+}
+
+@media (max-width:768px){
+  .stats .container{
+    flex-direction:column;
+  }
+  .steps{
+    flex-direction:column;
+  }
+  .arrow{
+    display:none;
+  }
+  .vet-section{
+    flex-direction:column;
+  }
+}
+
+/* =========================
+   ELIGIBLE COURSES
+========================= */
+
+.courses{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.course-grid{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.course-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid #e0e6ed;
+  flex:1;
+  min-width:280px;
+  transition:0.3s;
+}
+
+.course-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.course-header{
+  background:#1e3a6d;
+  color:#fff;
+  padding:30px;
+}
+
+.course-code{
+  color:#ff8c3a;
+  font-size:14px;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.course-header h3{
+  font-size:20px;
+}
+
+.course-body{
+  padding:30px;
+}
+
+.course-body p{
+  color:#5f6f82;
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+.course-meta{
+  font-size:14px;
+  color:#5f6f82;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border:2px solid #e6671e;
+  border-radius:8px;
+  color:#e6671e;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#e6671e;
+  color:#fff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width:992px){
+  .main-title,
+  .vet-right h2{
+    font-size:30px;
+  }
+  .divider{
+    display:none;
+  }
+}
+
+@media (max-width:768px){
+  .stats .container,
+  .steps,
+  .vet-section,
+  .course-grid{
+    flex-direction:column;
+  }
+  .arrow{
+    display:none;
+  }
+}
+
+/* =========================
+   WHY CHOOSE SECTION
+========================= */
+
+.why-section{
+  background:#10264b;
+  padding:100px 20px;
+}
+
+.why-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.why-small{
+  color:#ff8c3a;
+  letter-spacing:2px;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.why-title{
+  color:#fff;
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:25px;
+}
+
+.why-desc{
+  color:#cbd5e1;
+  max-width:700px;
+  margin-bottom:60px;
+  line-height:1.7;
+}
+
+.why-grid{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.why-card{
+  background:#1c355f;
+  padding:40px 30px;
+  border-radius:20px;
+  flex:1;
+  min-width:250px;
+  text-align:center;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.why-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+.why-icon{
+  background:#e6671e;
+  width:70px;
+  height:70px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin:0 auto 25px;
+}
+
+.why-card h3{
+  color:#fff;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.why-card p{
+  color:#cbd5e1;
+  font-size:15px;
+  line-height:1.6;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .why-title{
+    font-size:32px;
+  }
+  .why-grid{
+    flex-direction:column;
+  }
+}
+
+/* =========================
+   STUDENT STORIES
+========================= */
+
+.stories-section{
+  background:#f4f6f9;
+  padding:100px 20px;
+}
+
+.stories-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.stories-small{
+  color:#e6671e;
+  letter-spacing:2px;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.stories-title{
+  font-size:44px;
+  font-weight:800;
+  color:#1e3a6d;
+  margin-bottom:25px;
+}
+
+.stories-desc{
+  max-width:650px;
+  color:#5f6f82;
+  margin-bottom:60px;
+}
+
+.stories-grid{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.story-card{
+  background:#ffffff;
+  padding:40px 30px;
+  border-radius:20px;
+  flex:1;
+  min-width:280px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.story-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+
+.quote{
+  font-size:40px;
+  color:#e6671e;
+  margin-bottom:15px;
+}
+
+.stars{
+  color:#fbbf24;
+  margin-bottom:20px;
+  font-size:18px;
+}
+
+.story-text{
+  color:#5f6f82;
+  margin-bottom:30px;
+  line-height:1.7;
+}
+
+.story-user{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#1e3a6d;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.story-user h4{
+  color:#1e3a6d;
+  margin-bottom:3px;
+}
+
+.story-user span{
+  color:#5f6f82;
+  font-size:14px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .stories-title{
+    font-size:30px;
+  }
+  .stories-grid{
+    flex-direction:column;
+  }
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section{
+  background:#e6671e;
+  padding:100px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.cta-container{
+  max-width:1000px;
+  margin:auto;
+}
+
+.cta-title{
+  color:#ffffff;
+  font-size:48px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.cta-desc{
+  color:#ffe8d6;
+  font-size:18px;
+  margin-bottom:40px;
+  line-height:1.7;
+}
+
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:#ffffff;
+  color:#e6671e;
+  padding:15px 30px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-primary:hover{
+  background:#f4f4f4;
+  transform:translateY(-3px);
+}
+
+.btn-secondary{
+  border:2px solid #ffffff;
+  color:#ffffff;
+  padding:15px 30px;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-secondary:hover{
+  background:#ffffff;
+  color:#e6671e;
+  transform:translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .cta-title{
+    font-size:32px;
+  }
+  .cta-desc{
+    font-size:16px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+<div class="container">
+<div class="stat-box"><h2>20+</h2><p>Years Training</p></div>
+<div class="divider"></div>
+<div class="stat-box"><h2>5,000+</h2><p>Graduates</p></div>
+<div class="divider"></div>
+<div class="stat-box"><h2>15+</h2><p>Courses Available</p></div>
+<div class="divider"></div>
+<div class="stat-box"><h2>100%</h2><p>Online Flexible</p></div>
+<div class="divider"></div>
+<div class="stat-box"><h2>TOID</h2><p>90720</p></div>
+</div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section">
+<div class="small-title">HOW IT WORKS</div>
+<h2 class="main-title">4 Simple Steps to Enrol with VET Student Loans</h2>
+<p class="description">
+Getting started is easier than you think. Follow these four steps to begin your career journey without any upfront costs.
+</p>
+
+<div class="steps">
+<div class="card"><div class="number">1</div><div class="arrow">›</div>
+<h3>Choose Your Course</h3>
+<p>Browse our VET Student Loan eligible courses and find the qualification that aligns with your career goals.</p></div>
+
+<div class="card"><div class="number">2</div><div class="arrow">›</div>
+<h3>Check Eligibility</h3>
+<p>Confirm you meet the eligibility criteria — our enrolment team will guide you.</p></div>
+
+<div class="card"><div class="number">3</div><div class="arrow">›</div>
+<h3>Apply for Your Loan</h3>
+<p>Apply through the Australian Government's myGov portal.</p></div>
+
+<div class="card"><div class="number">4</div>
+<h3>Start Studying!</h3>
+<p>Begin your course online with full support from expert trainers.</p></div>
+</div>
+</section>
+
+<!-- ================= VET STUDENT LOANS ================= -->
+<section class="vet-section">
+
+<div class="vet-left">
+<h2>What Are VET Student Loans?</h2>
+<ul>
+<li><div class="check">✓</div> Australian Government-backed loan scheme for eligible VET courses</li>
+<li><div class="check">✓</div> Covers tuition fees — pay back only when earning above threshold</li>
+<li><div class="check">✓</div> Repayments made through Australian Tax Office</li>
+<li><div class="check">✓</div> Approved VET Student Loans provider</li>
+<li><div class="check">✓</div> If income never reaches threshold, you never repay</li>
+</ul>
+</div>
+
+<div class="vet-right">
+<div class="vet-small">VET STUDENT LOANS</div>
+<h2>Your Future Starts Now — Not When You Can Afford It</h2>
+<p>
+VET Student Loans remove the financial barrier between you and a nationally recognised qualification.
+</p>
+<p>
+Access quality training without the stress of upfront costs.
+</p>
+
+<div class="eligibility">
+<h3>Basic Eligibility Requirements:</h3>
+<ul>
+<li>✓ Australian citizen or permanent humanitarian visa holder</li>
+<li>✓ Enrolled in an eligible VET course</li>
+<li>✓ Meet USI requirements</li>
+<li>✓ Not previously received a VET loan for same unit</li>
+<li>✓ Demonstrate genuine intent to complete course</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<!-- ELIGIBLE COURSES -->
+<section class="courses">
+<div class="small-title">ELIGIBLE COURSES</div>
+<h2 class="main-title">VET Student Loan Eligible Qualifications</h2>
+<p class="description">
+These nationally recognised courses are eligible for VET Student Loans — study now and repay later.
+</p>
+
+<div class="course-grid">
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC43121</div>
+<h3>Certificate IV in Disability Support</h3>
+</div>
+<div class="course-body">
+<p>Gain the skills and knowledge to support people living with disabilities in community and residential settings.</p>
+<div class="course-meta">📅 12–18 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC43315</div>
+<h3>Certificate IV in Mental Health</h3>
+</div>
+<div class="course-body">
+<p>Develop expertise to provide mental health services, crisis support, and person-centred care.</p>
+<div class="course-meta">📅 12–18 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC52025</div>
+<h3>Diploma of Community Services</h3>
+</div>
+<div class="course-body">
+<p>Lead and coordinate community services programs and support individuals and families.</p>
+<div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+<div class="course-grid">
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC50125</div>
+<h3>Diploma of Early Childhood Education & Care</h3>
+</div>
+<div class="course-body">
+<p>Build advanced skills to work as an Early Childhood Teacher or Director in early learning centres, kindergartens, and family daycare</p>
+<div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC53315</div>
+<h3>Diploma of Mental Health</h3>
+</div>
+<div class="course-body">
+<p>Advance your career in mental health with specialist skills in complex case management, therapeutic approaches, and team leadership.</p>
+<div class="course-meta">📅 18–24 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+<div class="course-card">
+<div class="course-header">
+<div class="course-code">CHC62015</div>
+<h3>Advanced Diploma of Community Sector Management</h3>
+</div>
+<div class="course-body">
+<p>Step into senior leadership roles in the community sector with advanced management, governance, and strategic planning capabilities.</p>
+<div class="course-meta">📅 24 months | 💻 Online / Blended</div>
+<a href="#" class="btn">Learn More & Enrol</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY CHOOSE HAMMOND ================= -->
+
+<section class="why-section">
+  <div class="why-container">
+
+    <div class="why-small">WHY CHOOSE HAMMOND</div>
+
+    <h2 class="why-title">
+      Training That Changes Lives Since 2001
+    </h2>
+
+    <p class="why-desc">
+      Hammond Institute has been delivering nationally recognised training for over two decades. 
+      Here's why thousands of Australians choose us.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why-card">
+        <div class="why-icon">🎓</div>
+        <h3>Nationally Recognised</h3>
+        <p>
+          All courses are AQF-accredited and recognised across every state and territory in Australia.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">👨‍🏫</div>
+        <h3>Expert Trainers</h3>
+        <p>
+          Learn from industry professionals with real-world experience and deep field knowledge.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <h3>100% Flexible</h3>
+        <p>
+          Study online at your own pace, around work, family, and your busy lifestyle.
+        </p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Dedicated Support</h3>
+        <p>
+          After-hours student support to help you navigate personal, academic, and career challenges.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= STUDENT STORIES ================= -->
+
+<section class="stories-section">
+  <div class="stories-container">
+
+    <div class="stories-small">STUDENT STORIES</div>
+
+    <h2 class="stories-title">What Our Graduates Are Saying</h2>
+
+    <p class="stories-desc">
+      Don't just take our word for it — hear from real Hammond Institute students about their experience.
+    </p>
+
+    <div class="stories-grid">
+
+      <!-- Card 1 -->
+      <div class="story-card">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="story-text">
+          Hammond Institute is the best place to study. I had an amazing learning journey.
+          All staff members are very helpful and friendly. Trainers have a wealth of knowledge
+          and are incredibly supportive.
+        </p>
+
+        <div class="story-user">
+          <div class="avatar">SK</div>
+          <div>
+            <h4>Soniya Kakkar</h4>
+            <span>Certificate IV in Disability Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="story-card">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="story-text">
+          Completing my Certificate IV in Disability was an enlightening journey!
+          The course content was comprehensive, instructors were knowledgeable,
+          and the practical experience provided invaluable insights. Highly recommended!
+        </p>
+
+        <div class="story-user">
+          <div class="avatar">YM</div>
+          <div>
+            <h4>Yota Magoulas</h4>
+            <span>Certificate IV in Disability Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="story-card">
+        <div class="quote">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="story-text">
+          I had a really positive experience with Hammond Institute.
+          My trainer presented a holistic approach to care as well as self-care,
+          which I thought was excellent. Overall a great course with helpful support staff.
+        </p>
+
+        <div class="story-user">
+          <div class="avatar">JN</div>
+          <div>
+            <h4>James Nixon</h4>
+            <span>Certificate IV in Disability Support</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALL TO ACTION ================= -->
+
+<section class="cta-section">
+  <div class="cta-container">
+
+    <h2 class="cta-title">
+      Ready to Study Now & Pay Later?
+    </h2>
+
+    <p class="cta-desc">
+      Join thousands of Australians who've launched their career with Hammond Institute —
+      with no upfront fees through VET Student Loans.
+    </p>
+
+    <div class="cta-buttons">
+      <a href="#" class="btn-primary">🎓 Enrol Now — Free Enquiry</a>
+      <a href="tel:0387648419" class="btn-secondary">📞 Call 03 8764 8419</a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
